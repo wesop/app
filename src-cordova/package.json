@@ -1,0 +1,69 @@
+{
+  "name": "com.wesop.appshopsol",
+  "displayName": "shopsol",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": "^6.4.0",
+    "cordova-browser": "^5.0.4",
+    "cordova-ios": "^4.5.5",
+    "cordova-plugin-actionsheet": "^2.3.3",
+    "cordova-plugin-add-swift-support": "^1.7.2",
+    "cordova-plugin-appinfo": "^2.1.2",
+    "cordova-plugin-backbutton": "^0.3.0",
+    "cordova-plugin-camera": "^4.0.3",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-exit": "^1.0.2",
+    "cordova-plugin-exitapp": "^1.0.0",
+    "cordova-plugin-exitapp2": "^1.0.4",
+    "cordova-plugin-fcm": "^2.1.2",
+    "cordova-plugin-file": "^6.0.1",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-geolocation": "^4.0.1",
+    "cordova-plugin-image-picker": "^1.1.3",
+    "cordova-plugin-market": "git+https://github.com/xmartlabs/cordova-plugin-market.git",
+    "cordova-plugin-qrscanner": "^2.6.0",
+    "cordova-plugin-screen-orientation": "^3.0.1",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-swift-support": "^3.1.1",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "es6-promise-plugin": "^4.2.2"
+  },
+  "cordova": {
+    "platforms": [
+      "ios",
+      "android",
+      "browser"
+    ],
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-backbutton": {},
+      "cordova-plugin-qrscanner": {},
+      "cordova-plugin-actionsheet": {},
+      "cordova-plugin-camera": {},
+      "cordova-plugin-file-transfer": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": " "
+      },
+      "cordova-plugin-image-picker": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-appinfo": {},
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-fcm": {},
+      "cordova-plugin-exit": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-dialogs": {},
+      "cordova-plugin-market": {}
+    }
+  }
+}

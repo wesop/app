@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "샵솔",
+  "short_name": "샵솔",
+  "version": "com.wesop.appshopsol",
+  "description": "shopsol",
+  "author": "위솝(Wesop)",
+  "icons": [],
+  "start_url": "http://10.40.101.219:8080/index.html"
+}

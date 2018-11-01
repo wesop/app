@@ -1,0 +1,913 @@
+@import './themes/common.variables'
+
+// app global css
+
+h1,h2,h3,h4,h5,h6,div { margin: 0; }
+
+body {
+  font-size: 20px;
+}
+
+.page-wrap {
+  padding: 20px 12px;
+}
+
+* {
+  &[no-padding] {
+    padding: 0 !important;
+  }
+
+  &[padding] {
+    padding: .5em;
+  }
+
+  &[padding-top] {
+    padding-top: .5em;
+  }
+
+  &[padding-bottom] {
+    padding-bottom: .5em;
+  }
+
+  &[padding-right] {
+    padding-right: .5em;
+  }
+
+  &[padding-left] {
+    padding-left: .5em;
+  }
+
+  &[margin] {
+    display: block;
+    margin: .5em;
+  }
+
+  &[margin-left] {
+    display: block;
+    margin-left: .5em;
+  }
+  &[margin-right] {
+    display: block;
+    margin-right: .5em;
+  }
+  &[margin-top] {
+    display: block;
+    margin-top: .5em;
+  }
+  &[margin-bottom] {
+    display: block;
+    margin-bottom: .5em;
+  }
+
+  &[text-left] {
+    text-align: left;
+  }
+
+  &[text-center] {
+    text-align: center;
+
+    .row {
+      .q-input-target {
+        justify-content: center;
+      }
+    }
+  }
+
+  &[text-right] {
+    text-align: right;
+
+    .row {
+      .q-input-target {
+        justify-content: flex-end;
+      }
+    }
+  }
+}
+
+button {
+  padding: 0;
+  background: none;
+  border: 0;
+  outline: none;
+}
+
+
+@font-face {
+  font-family: 'NanumSquare';//NanumSquare
+  font-weight: 400;
+  src: url('../assets/fonts/netmarbleL.ttf') format('woff');
+}
+@font-face {
+  font-family: 'NanumSquare1';
+  font-weight: 400;
+  src: url('../assets/fonts/NanumSquareR.woff') format('woff');
+}
+// @font-face {
+//   font-family: 'NanumSquare';
+//   font-weight: 600;
+//   src: url('../assets/fonts/NanumSquareB.woff') format('woff');
+// }
+// @font-face {
+//   font-family: 'NanumSquare';
+//   font-weight: 800;
+//   src: url('../assets/fonts/NanumSquareEB.woff') format('woff');
+// }
+// @font-face {
+//   font-family: 'NanumSquare';
+//   font-weight: 100;
+//   src: url('../assets/fonts/NanumSquareL.woff') format('woff');
+// }
+
+* { font-family: 'NanumSquare'; }
+input[type="password"] { font-family: 'Roboto'; }
+
+
+.q-layout-page {
+ padding-bottom: 57px;
+  background :white;
+ }
+
+.q-field {
+  position relative;
+
+  .q-field-label-inner.row {
+    min-height: auto;
+    font-size: .875rem;
+    font-weight: 800;
+  }
+
+  &[required] {
+    .q-field-label-inner.row:after {
+      content: '*';
+      margin-top: -6px;
+      margin-left: 4px;
+      color: $em;
+    }
+  }
+
+  &.text-white {
+    .q-field-label-inner.row {
+      color: #fff;
+    }
+  }
+}
+
+input.q-input-target {
+  height: 1.05em;
+}
+
+.q-btn-group {
+  border-radius: 0;
+}
+
+button.q-btn {
+  padding: 12px 0;
+  border-radius: 0;
+  font-size: 1rem;
+
+  &.q-btn-round {
+    border-radius: 50%;
+  }
+}
+
+body {
+  &.q-layout-animate .q-layout-transition {
+    transition: none;
+  }
+
+  .backdrop-wrap {
+    position: fixed;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 2001;
+  }
+
+  &.use-backdrop {
+    overflow: hidden;
+
+    .backdrop-wrap {
+      bottom: 0;
+    }
+  }
+}
+
+.modal.minimized, .modal.with-backdrop {
+  background: rgba(0,0,0,.8);
+}
+
+.q-layout-header {
+  user-select none
+
+  .q-toolbar {
+    position relative
+    padding 0 !important
+    min-height 57px !important
+
+    .q-btn {
+      position absolute
+      top 0
+      bottom 0
+      padding 4px 8px
+
+      .q-icon {
+        font-size 2.25em
+      }
+
+      &:first-child {
+        left 0
+        padding-left 8px
+
+        .q-icon {
+          margin-right 0
+          margin-left -8px
+        }
+      }
+
+      &:last-child {
+        right 0
+        padding-right 8px
+
+        .q-icon {
+          margin-left 0
+          margin-right -4px
+        }
+
+        .q-btn-inner > div + .q-icon {
+          margin-right -8px
+        }
+
+        .q-btn-inner > div:only-child {
+          padding-right 4px
+        }
+      }
+    }
+  }
+}
+
+.q-layout-footer {
+  .q-toolbar {
+    padding: 0 !important;
+    min-height: 57px !important;
+
+    .q-btn {
+      padding: 4px 16px
+    }
+  }
+}
+
+.q-layout-footer.fixed-bottom
+  border-top: 0
+  box-shadow: 0 -1px 3px $gray
+
+  .q-toolbar
+    display flex
+
+    button.q-btn
+      flex 1
+      display inline-block
+      padding 0
+      height 42px
+      font-size .8rem
+
+      .q-btn-inner
+        flex-direction column
+
+        .q-icon
+          margin 0 auto
+          font-size 1.275rem
+
+    .q-tabs
+      width 100%
+
+      .q-tabs-head
+        display none
+
+      .q-tabs-panes
+        display flex
+
+        .q-tab
+          flex 1
+          display block
+          height 57px
+
+          & > .q-tab-icon
+            display block
+            margin 4px 0
+            text-align center
+            transform scale(1)
+            font-size 1.5rem
+
+            & + .q-tab-label
+              display block
+              margin-top 0
+              font-size .85rem
+
+          .q-tab-label:only-child
+            line-height 34px
+            color alpha($blue, 50%)
+            opacity 1
+
+.q-tab
+  &.active
+    background-color: $blue;
+    border-bottom: 0;
+
+    .q-icon
+      color: #fff;
+
+    .q-tab-label
+      transform: scale(1);
+      font-weight: 600;
+      color: #fff;
+      font-size: 1rem;
+
+  .q-tab-label
+      font-size: 1rem;
+
+  .q-dot
+      display none
+
+.q-item.active
+  padding-top 0
+  padding-bottom 0
+  background-color #fff
+
+.q-item-side
+  .q-item-image
+    min-width 44px
+    max-width 44px
+    max-height 44px
+    height auto
+
+.modal
+  $modal-button-height = 44px;
+
+  user-select: none;
+
+  .modal-content
+    border-radius 0
+    font-size .9rem
+
+    .layout-padding
+      padding-top 0
+      padding-bottom 0
+      text-align center
+
+    .q-toolbar[slot="footer"]
+      padding 0
+      height $modal-button-height;
+      max-height $modal-button-height;
+      min-height $modal-button-height;
+
+      .q-btn-group
+        width 100%
+        height $modal-button-height;
+
+        & > div
+          display flex
+          width 100%
+
+        button.q-btn
+          flex 1
+          padding 0
+          margin 0
+          border-right 1px solid #fff
+          font-size .9rem
+
+          &:last-child
+            border-right 0 !important
+
+.q-checkbox {
+  .q-option-label {
+    // font-size: .8em;
+  }
+}
+
+.q-radio {
+  .q-option-inner + .q-option-label {
+    font-weight: 100;
+    color: $gray;
+  }
+
+  .q-option-inner.active + .q-option-label {
+    font-weight: 600;
+    color: #000;
+  }
+
+  .q-icon {
+    top: -2px;
+  }
+}
+
+.bg-facebook {
+  background: $facebook !important
+}
+
+.bg-kakao {
+  background: $kakao !important
+}
+
+.bg-naver {
+  background: $naver !important
+}
+
+.bg-em {
+  background: $em !important
+}
+
+.bg-darkblue {
+  background: $darkblue !important
+}
+
+.bg-blue {
+  background: $blue !important
+}
+
+.bg-paleblue {
+  background: $paleblue !important
+}
+
+.bg-darkyellow {
+  background: $darkyellow !important
+}
+
+.bg-danger {
+  background: $danger !important
+}
+
+.bg-gray {
+  background: $gray !important
+}
+
+.bg-lightgray {
+  background: lighten($gray, 65%) !important
+}
+
+.text-em {
+  color: $em !important
+}
+
+.text-darkblue {
+  color: $darkblue !important
+}
+
+.text-blue {
+  color: $blue !important
+}
+
+.text-paleblue {
+  color: $paleblue !important
+}
+
+.text-darkyellow {
+  color: $darkyellow !important
+}
+
+
+.text-gray {
+  color: $gray !important
+}
+
+.text-danger {
+  color: $danger !important
+}
+
+.text-facebook {
+  color: $facebook !important
+}
+
+
+/** fullcalendar **/
+
+.fc-view-container {
+  .fc-month-view  {
+    table {
+      width: 100%;
+
+      .fc-head {
+        .fc-widget-header {
+          border: 0;
+
+          tr {
+            th {
+              padding: 12px 0;
+              font-weight: 600;
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
+
+      .fc-body {
+        border: 0;
+
+        .fc-widget-content {
+          min-height: 44px;
+          border: 0;
+
+          .fc-bg {
+            display: none
+          }
+
+          .fc-content-skeleton {
+            thead {
+              td {
+                padding: 0 0;
+                width: 14.28%;
+                text-align: center;
+                font-size: .9rem;
+
+                &.fc-other-month {
+                  color: lighten($gray, 35%);
+                }
+
+                span.fc-day-number {
+                  display: inline-block;
+                  // margin-right: 8px;
+                  padding: 0;
+                  width: 28px;
+                  height: 28px;
+                  line-height: 29px;
+                  border: 0;
+                  border-radius: 50%;
+                  box-sizing: border-box;
+                  float: none;
+                }
+
+                &[class*="today"] {
+                  span.fc-day-number {
+                    background-color: $paleblue;
+                    color: #fff;
+                  }
+                }
+
+                &.selected {
+                  span.fc-day-number {
+                    background-color: $em;
+                    color: #fff;
+                  }
+                }
+
+                &.UPDATED {
+                  span.fc-day-number {
+                    border: 1px solid $em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .fc-sat { color: $primary; }
+      .fc-sun { color: $em; }
+    }
+  }
+}
+
+/** fullcalendar **/
+
+.image-wrap {
+  $tiny = 30px;
+  $small = 40px;
+  $base = 50px;
+  $large = 60px;
+  $huge = 70px;
+  $massive = 100px;
+
+  display: inline-block;
+  width: $base;
+  height: $base;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    max-width: $base;
+    // max-height: $base;
+  }
+
+  &.tiny {
+    width: $tiny;
+    height: $tiny;
+
+    img {
+      max-width: $tiny;
+      // max-height: $tiny;
+    }
+  }
+
+  &.small {
+    width: $small;
+    height: $small;
+
+    img {
+      max-width: $small;
+      // max-height: $small;
+    }
+  }
+
+  &.large {
+    width: $large;
+    height: $large;
+
+    img {
+      max-width: $large;
+      // max-height: $large;
+    }
+  }
+
+  &.huge {
+    width: $huge;
+    height: $huge;
+
+    img {
+      max-width: $huge;
+      // max-height: $huge;
+    }
+  }
+
+  &.massive {
+    width: $massive;
+    height: $massive;
+
+    img {
+      max-width: $massive;
+      // max-height: $massive;
+    }
+  }
+}
+
+.q-datetime {
+  user-select: none;
+
+  .modal-buttons {
+    button.q-btn  {
+      padding-left: 12px;
+      padding-right: 12px;
+
+      .q-btn-inner {
+        div {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .q-datetime-col.q-datetime-col-hour {
+    width: 52px;
+    text-align: left;
+
+    .q-datetime-item:after {
+      content: '시'
+    }
+  }
+
+  .q-datetime-col.q-datetime-col-minute {
+    width: 52px;
+
+    .q-datetime-item:after {
+      content: '분'
+    }
+  }
+}
+
+.q-inner-loading {
+  position: fixed;
+  z-index: 9999;
+}
+
+table {
+  width: 100%;
+}
+
+.fixed {
+  width: 100%;
+  z-index: 10;
+
+  &.top {
+    top: 44px;
+  }
+}
+
+.q-tooltip {
+  font-size: .9rem;
+  max-width: 80%;
+}
+
+.label-wrap {
+  label {
+    display: inline-block;
+    line-height: 28px;
+    font-size: .875rem;
+    color: #424242;
+
+    button {
+      margin: 0;
+      padding: 0;
+      height: 24px;
+      background: none;
+      border: 0;
+      vertical-align: -2px;
+    }
+  }
+
+  & > .label {
+    margin-top: 0 !important;
+  }
+}
+
+.policy-contents-wrap
+  white-space pre-wrap
+  padding 0 1em 60px
+  line-height 220%
+  font-size .75em
+  color #636363
+
+.map-marker.on {
+  background-image: url('../assets/imgs/marker-on.png');
+}
+
+.map-marker.off {
+  background-image: url('../assets/imgs/marker-off.png');
+}
+
+.no-focusable {
+  .q-focus-helper {
+    display: none;
+  }
+}
+
+.field {
+  position: relative;
+  margin: .7em 0;
+  padding-bottom: .5em;
+  border-bottom: 1px solid #AACEDD;
+
+  .label {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    margin-bottom: 4px;
+    font-size: .9rem;
+    font-weight: 800;
+  }
+
+  .text {
+    margin-left: 8px;
+
+    small {
+      font-weight: 400;
+      font-size: .5em;
+    }
+
+    &+.label {
+      margin-top: 1.4em;
+    }
+  }
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &:last-of-type {
+    border: 0;
+  }
+
+  &:last-child {
+    border: 0;
+  }
+
+  &.required {
+    .label {
+      &:after {
+        position: absolute;
+        top: -3px;
+        right: -7px;
+        color: #f00;
+        content: '*';
+      }
+    }
+  }
+
+  &.hide-underline {
+    border-bottom: 0;
+  }
+}
+
+.btn-more-wrap {
+  position: absolute;
+  top: 60px;
+  right: 12px;
+  padding: 0 3px;
+  width: auto;
+  background: #fff;
+  border: 1px solid $blue;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  button {
+    display: block;
+    padding: 0 12px;
+    width: 100%;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid #A3B4BE;
+    text-align: left;
+    line-height: 40px;
+    font-size: 1rem;
+    outline: none;
+
+    .q-icon {
+      margin-top: -2px;
+    }
+
+    &:last-child {
+      border: 0;
+    }
+  }
+}
+
+.fc-content-skeleton {
+  td {
+    .status-wrap {
+      position: relative;
+      height: 5px;
+
+      .ADDED, .WRONG, .LATE, .OVER, .EARLY {
+        display: none;
+        position: relative;
+        top: -5px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+      }
+
+      &.ADDED {
+        .ADDED {
+          display: inline-block;
+          background-color: $secondary;
+        }
+      }
+
+      &.WRONG {
+        .WRONG {
+          display: inline-block;
+          background-color: #e66a74;
+        }
+      }
+
+      &.LATE, &.OVER, &.EARLY {
+        .LATE, .OVER, .EARLY {
+          display: inline-block;
+          background-color: #e4a76a;
+        }
+      }
+
+    }
+  }
+}
+
+.swal-modal {
+  border-radius: 2px;
+
+  .swal-text {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .swal-footer {
+    display: flex;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    .swal-button-container {
+      flex: 1;
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+
+      .swal-button {
+        width: 100%;
+        height: 44px;
+        border-radius: 0;
+
+        &.swal-button--confirm {
+          background-color: $blue;
+        }
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
+
